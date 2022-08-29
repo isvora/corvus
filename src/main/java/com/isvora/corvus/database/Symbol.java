@@ -64,6 +64,7 @@ public class Symbol {
         } else {
             stringBuilder.append("\uD83D\uDCC9 \n");
         }
+        stringBuilder.append("-".repeat(100));
         return stringBuilder.toString();
     }
 }

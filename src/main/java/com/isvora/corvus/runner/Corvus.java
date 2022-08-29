@@ -35,11 +35,11 @@ public class Corvus implements CommandLineRunner {
     }
 
     /**
-     * Every 30 seconds scan for upcoming trending tickers to get information about them.
+     * Every minute scan for upcoming trending tickers to get information about them.
      * Delete the symbols from the database that they are replacing.
      * Send a discord message
      */
-    @Scheduled(cron = "*/30 * * * * *")
+    @Scheduled(cron = "*/60 * * * * *")
     public void scanUpcomingTickers() {
         log.info("Scanning upcoming tickers");
         var upcomingTickers = new LinkedHashMap<Symbol, String>();
