@@ -49,7 +49,7 @@ The scanning happens every 30 seconds, and we publish any new data on Discord.
 
 An example with how this looks can be seen here:
 
-![](doc/images/discord_automatic_messages.png)
+![](doc/images/discord_tickers_automatic.png)
 
 We can also get the tickers between rank 11 and 20 manually using a the slash command `/tickers`
 
