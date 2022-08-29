@@ -8,7 +8,7 @@ than only the first 10 symbols you see on the webpage.
 
 ## Database
 
-![](doc/images/db.png)
+![](doc/images/database.png)
 
 ## Flow
 
