@@ -101,6 +101,7 @@ public class Corvus implements CommandLineRunner {
         upcomingTickers.forEach((symbol, s) -> {
             stringBuilder.append(symbol.discordFormat(s));
         });
+        stringBuilder.append("-".repeat(50));
         discordService.postUpcomingTickers(stringBuilder.toString());
     }
 
