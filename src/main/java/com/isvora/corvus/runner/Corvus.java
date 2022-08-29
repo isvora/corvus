@@ -41,6 +41,7 @@ public class Corvus implements CommandLineRunner {
      */
     @Scheduled(cron = "*/30 * * * * *")
     public void scanUpcomingTickers() {
+        log.info("Scanning upcoming tickers");
         var upcomingTickers = new LinkedHashMap<Symbol, String>();
         var stocktwitsResponse = stockTwitsService.getStockTwitsResponse();
         var symbols = buildSymbolsList(stocktwitsResponse);
