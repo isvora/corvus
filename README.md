@@ -1,4 +1,4 @@
-# Predi
+# Corvus
 
 Finding upcoming trending tickers on stocktwits
 
