@@ -10,4 +10,7 @@ public class StocktwitsConfiguration {
 
     @Value("${stocktwits.api}")
     private String apiUrl;
+
+    @Value("${stocktwits.comments.api}")
+    private String commentsApiUrl;
 }

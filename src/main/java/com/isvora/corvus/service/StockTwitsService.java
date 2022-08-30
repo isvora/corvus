@@ -2,6 +2,7 @@ package com.isvora.corvus.service;
 
 import com.isvora.corvus.configuration.StocktwitsConfiguration;
 import com.isvora.corvus.model.StocktwitsResource;
+import com.isvora.corvus.model.comments.CommentsResource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.core.ParameterizedTypeReference;
@@ -22,6 +23,16 @@ public class StockTwitsService {
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<StocktwitsResource>() {});
+
+        return response.getBody() == null ? null : response.getBody();
+    }
+
+    public CommentsResource getStockTwitsComments(String ticker) {
+        var response = restTemplate.exchange(
+                String.format(stocktwitsConfiguration.getCommentsApiUrl(), ticker),
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<CommentsResource>() {});
 
         return response.getBody() == null ? null : response.getBody();
     }
