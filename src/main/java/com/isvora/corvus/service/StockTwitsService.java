@@ -4,7 +4,7 @@ import com.isvora.corvus.configuration.StocktwitsConfiguration;
 import com.isvora.corvus.model.StocktwitsResource;
 import com.isvora.corvus.model.comments.CommentsResource;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,8 @@ import org.springframework.web.client.RestTemplate;
 public class StockTwitsService {
 
     private final StocktwitsConfiguration stocktwitsConfiguration;
-    private final RestTemplate restTemplate = new RestTemplateBuilder().build();
+    @Qualifier("restTemplate")
+    private final RestTemplate restTemplate;
 
     public StocktwitsResource getStockTwitsResponse() {
         var response = restTemplate.exchange(
